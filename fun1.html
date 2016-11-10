@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+   <link rel="stylesheet" type="text/css" href="css/button.css">
+    <meta charset="utf-8" />
+    <title>功能一選項</title>
+    <script>
+        var select = "";
+
+        function get_val() {
+            var form = document.getElementById('gameselect');
+            select = form.options[form.selectedIndex].value;
+        }
+
+        function chg() {
+            var o = document.getElementById('main');
+            o.src = select + '.php';
+
+        }
+    </script>
+
+
+</head>
+
+<body style="background-color:rgba(0,0,0,0,0);">
+    <select class="selectpicker" name="YourLocation" id="gameselect" onClick="get_val()" style="width: 600px;">
+         
+        <option value="game1">場次1</option>
+
+        <option value="game2">場次2</option>
+
+        <option value="game3">場次3</option>
+
+        <option value="game4">場次4</option>
+
+    </select>
+    <button onclick="chg()" class="myButton" >GO</button>
+    <br/>
+    <div style="padding-top:50px;"> <iframe id="main" src="game1.php" style="width: 1000px ;height: 1300px;" frameborder="0" ></iframe></div>
+   
+
+</body>
+
+</html>
